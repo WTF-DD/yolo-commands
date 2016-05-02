@@ -1,0 +1,15 @@
+#!/bin/sh
+
+function yolo_stash() {
+    RANDOM_RANGED=`echo $RANDOM % 10 | bc`
+
+    if [ $RANDOM_RANGED -gt 4 ]; then
+        echo "soooooorry :("
+        git reset --hard
+    else
+        echo "you are really lucky today"
+        git stash
+    fi
+}
+
+yolo_stash
